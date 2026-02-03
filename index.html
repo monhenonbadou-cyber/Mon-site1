@@ -1,242 +1,186 @@
  <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio - Badou Christ Yohann</title>
-<style>
-:root {
-  --primary-color: #1E90FF;
-  --secondary-color: #FF6347;
-  --accent-color: #32CD32;
-  --bg-color: #F5F5F5;
-  --card-bg: #FFFFFF;
-  --text-color: #333333;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Badou Christ Yohann</title>
+  <style>
+    :root {
+      --primary-color: #1E90FF;
+      --secondary-color: #FF6347;
+      --accent-color: #32CD32;
+      --bg-color: #F5F5F5;
+      --card-bg: #FFFFFF;
+      --text-color: #333333;
+      --header-height: 180px;
+    }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  line-height: 1.6;
-}
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
 
-header {
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 2rem 1rem;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+    header {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
 
-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-header p { font-size: 1.2rem; }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
 
-main { max-width: 1000px; margin: -3rem auto 2rem auto; padding: 0 1rem; }
+    header p {
+      font-size: 1.2rem;
+    }
 
-section { margin-bottom: 3rem; }
-h2 {
-  color: var(--secondary-color);
-  border-bottom: 3px solid var(--secondary-color);
-  display: inline-block;
-  padding-bottom: 0.3rem;
-  margin-bottom: 1.5rem;
-}
+    main {
+      max-width: 1000px;
+      margin: -3rem auto 2rem auto;
+      padding: 0 1rem;
+    }
 
-.objectifs, .passions, .certifications {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
+    section {
+      margin-bottom: 3rem;
+    }
 
-.card {
-  background-color: var(--card-bg);
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  flex: 1 1 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-top 0.3s ease;
-  cursor: pointer;
-  position: relative;
-}
+    h2 {
+      color: var(--secondary-color);
+      border-bottom: 3px solid var(--secondary-color);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.5rem;
+    }
 
-.card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-  border-top: 3px solid var(--accent-color);
-}
+    .objectifs, .passions, .certifications {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
 
-.card h3 { margin-bottom: 0.5rem; color: var(--primary-color); }
-.card p { font-size: 0.95rem; }
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      flex: 1 1 250px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-top 0.3s ease;
+      cursor: pointer;
+    }
 
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background-color: var(--primary-color);
-  color: #fff;
-  font-size: 0.95rem;
-}
+    .card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+      border-top: 3px solid var(--accent-color);
+    }
 
-/* MODAL STYLE */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-  transition: all 0.3s ease;
-}
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
 
-.modal-content {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 500px;
-  width: 90%;
-  position: relative;
-  text-align: center;
-  animation: slideIn 0.4s ease;
-}
+    .card p {
+      font-size: 0.95rem;
+    }
 
-.modal-content h3 { color: var(--primary-color); margin-bottom: 1rem; }
-.modal-content p { font-size: 1rem; margin-bottom: 1rem; }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: var(--primary-color);
+      color: #fff;
+      font-size: 0.95rem;
+    }
 
-.close-btn {
-  position: absolute;
-  top: 10px; right: 15px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #333;
-  transition: color 0.3s;
-}
-.close-btn:hover { color: var(--accent-color); }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
 
-@keyframes slideIn {
-  from { transform: translateY(-50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
+      .objectifs, .passions, .certifications {
+        flex-direction: column;
+      }
 
-@media (max-width: 768px) {
-  header h1 { font-size: 2rem; }
-  .objectifs, .passions, .certifications { flex-direction: column; }
-  main { margin-top: 1rem; }
-}
-</style>
+      main {
+        margin-top: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Badou Christ Yohann</h1>
+    <p>Passionné du numérique et futur entrepreneur engagé pour son pays</p>
+  </header>
 
-<header>
-  <h1>Badou Christ Yohann</h1>
-  <p>Passionné du numérique et futur entrepreneur engagé pour son pays</p>
-</header>
-
-<main>
-  <!-- Objectifs -->
-  <section>
-    <h2>Mes Objectifs</h2>
-    <div class="objectifs">
-      <div class="card">
-        <h3>Entrepreneur Visionnaire</h3>
-        <p>Créer des solutions numériques innovantes et aider le développement de mon pays.</p>
+  <main>
+    <!-- Objectifs -->
+    <section>
+      <h2>Mes Objectifs</h2>
+      <div class="objectifs">
+        <div class="card">
+          <h3>Entrepreneur Visionnaire</h3>
+          <p>Devenir le plus grand entrepreneur de ma génération, créer des solutions numériques innovantes et aider le développement de mon pays.</p>
+        </div>
+        <div class="card">
+          <h3>Impact Social</h3>
+          <p>Contribuer activement à l'économie locale et soutenir les jeunes talents dans le numérique.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Impact Social</h3>
-        <p>Soutenir les jeunes talents et contribuer activement à l'économie locale.</p>
+    </section>
+
+    <!-- Passions -->
+    <section>
+      <h2>Ma Passion</h2>
+      <div class="passions">
+        <div class="card">
+          <h3>Numérique & Technologie</h3>
+          <p>Explorer les nouvelles technologies, coder, créer des applications et transformer des idées en solutions concrètes.</p>
+        </div>
+        <div class="card">
+          <h3>Innovation</h3>
+          <p>Rechercher toujours l'innovation pour améliorer la vie des utilisateurs et révolutionner le marché.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Passions -->
-  <section>
-    <h2>Ma Passion</h2>
-    <div class="passions">
-      <div class="card">
-        <h3>Numérique & Technologie</h3>
-        <p>Coder, créer des applications et transformer des idées en solutions concrètes.</p>
+    <!-- Certifications -->
+    <section>
+      <h2>Mes Certifications</h2>
+      <div class="certifications">
+        <div class="card" onclick="alert('Certification GOOGLE DOCS acquise en 2025 !')">
+          <h3>GOOGLE DOCS</h3>
+          <p>Maîtrise de l’édition collaborative, mise en forme professionnelle et travail en temps réel dans le cloud.</p>
+        </div>
+        <div class="card" onclick="alert('Certification GOOGLE DRIVE obtenue !')">
+          <h3>GOOGLE DRIVE</h3>
+          <p>Compétences en gestion, stockage, partage sécurisé et synchronisation de fichiers dans le cloud.</p>
+        </div>
+        <div class="card" onclick="alert('Certification GOOGLE SHEETS avancé obtenue !')">
+          <h3>GOOGLE SHEETS</h3>
+          <p>Analyse de données, calculs automatisés, tableaux dynamiques et collaboration en temps réel dans un tableur cloud.</p>
+        </div>
+        <div class="card" onclick="alert('Certification GOOGLE SLIDES obtenue !')">
+          <h3>GOOGLE SLIDES</h3>
+          <p>Conception de présentations professionnelles, collaboratives et interactives dans un environnement cloud.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Innovation</h3>
-        <p>Rechercher l'innovation pour améliorer la vie des utilisateurs et révolutionner le marché.</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Certifications -->
-  <section>
-    <h2>Mes Certifications</h2>
-    <div class="certifications">
-      <div class="card" data-modal="modal-docs">GOOGLE DOCS</div>
-      <div class="card" data-modal="modal-drive">GOOGLE DRIVE</div>
-      <div class="card" data-modal="modal-sheets">GOOGLE SHEETS</div>
-      <div class="card" data-modal="modal-slides">GOOGLE SLIDES</div>
-    </div>
-  </section>
-</main>
-
-<!-- MODALS -->
-<div id="modal-docs" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h3>GOOGLE DOCS</h3>
-    <p>Maîtrise de l’édition collaborative, mise en forme professionnelle et travail en temps réel dans le cloud.</p>
-  </div>
-</div>
-
-<div id="modal-drive" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h3>GOOGLE DRIVE</h3>
-    <p>Gestion, stockage, partage sécurisé et synchronisation de fichiers dans le cloud.</p>
-  </div>
-</div>
-
-<div id="modal-sheets" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h3>GOOGLE SHEETS</h3>
-    <p>Analyse de données, calculs automatisés, tableaux dynamiques et collaboration en temps réel.</p>
-  </div>
-</div>
-
-<div id="modal-slides" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h3>GOOGLE SLIDES</h3>
-    <p>Conception de présentations professionnelles, collaboratives et interactives.</p>
-  </div>
-</div>
-
-<footer>&copy; 2026 Badou Christ Yohann - Tous droits réservés</footer>
-
-<script>
-// Ouvrir modal
-document.querySelectorAll('.card[data-modal]').forEach(card => {
-  card.addEventListener('click', () => {
-    const modal = document.getElementById(card.dataset.modal);
-    modal.style.display = 'flex';
-  });
-});
-
-// Fermer modal
-document.querySelectorAll('.close-btn').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.target.closest('.modal').style.display = 'none';
-  });
-});
-
-// Fermer modal en cliquant en dehors
-window.addEventListener('click', (e) => {
-  document.querySelectorAll('.modal').forEach(modal => {
-    if (e.target === modal) modal.style.display = 'none';
-  });
-});
-</script>
-
+  <footer>
+    &copy; 2026 Badou Christ Yohann - Tous droits réservés
+  </footer>
 </body>
 </html>
 
