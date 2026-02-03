@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="fr"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Mon Portfolio - Badou Christ Yohann</title>  <style>
+  
+    /* Palette de couleurs moderne */
+  
+    :root {
+  
+      --primary-color: #1E90FF;   /* Bleu vif */
+  
+      --secondary-color: #FF6347; /* Rouge orangé */
+  
+      --bg-color: #F5F5F5;        /* Gris clair pour fond */
+  
+      --card-bg: #FFFFFF;          /* Blanc pour blocs */
+  
+      --text-color: #333333;       /* Texte sombre */
+  
+      --accent-color: #32CD32;     /* Vert pour hover/interaction */
+  
+    }
+  
+
+  
+    body {
+  
+      margin: 0;
+  
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+      background-color: var(--bg-color);
+  
+      color: var(--text-color);
+  
+    }
+  
+
+  
+    header {
+  
+      background-color: var(--primary-color);
+  
+      color: white;
+  
+      padding: 2rem;
+  
+      text-align: center;
+  
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  
+    }
+  
+
+  
+    header h1 {
+  
+      margin: 0;
+  
+      font-size: 2.5rem;
+  
+    }
+  
+
+  
+    header p {
+  
+      font-size: 1.2rem;
+  
+      margin-top: 0.5rem;
+  
+    }
+  
+
+  
+    main {
+  
+      max-width: 1000px;
+  
+      margin: 2rem auto;
+  
+      padding: 0 1rem;
+  
+    }
+  
+
+  
+    section {
+  
+      margin-bottom: 3rem;
+  
+    }
+  
+
+  
+    h2 {
+  
+      color: var(--secondary-color);
+  
+      border-bottom: 3px solid var(--secondary-color);
+  
+      display: inline-block;
+  
+      padding-bottom: 0.3rem;
+  
+    }
+  
+
+  
+    .objectifs, .passions, .certifications {
+  
+      display: flex;
+  
+      flex-wrap: wrap;
+  
+      gap: 1rem;
+  
+    }
+  
+
+  
+    .card {
+  
+      background-color: var(--card-bg);
+  
+      border-radius: 12px;
+  
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  
+      padding: 1.5rem;
+  
+      flex: 1 1 250px;
+  
+      transition: transform 0.3s, box-shadow 0.3s;
+  
+      cursor: pointer;
+  
+    }
+  
+
+  
+    .card:hover {
+  
+      transform: translateY(-5px);
+  
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  
+      border-top: 3px solid var(--accent-color);
+  
+    }
+  
+
+  
+    .card h3 {
+  
+      margin-top: 0;
+  
+      color: var(--primary-color);
+  
+    }
+  
+
+  
+    .card p {
+  
+      margin: 0.5rem 0 0 0;
+  
+    }
+  
+
+  
+    footer {
+  
+      text-align: center;
+  
+      padding: 2rem;
+  
+      background-color: var(--primary-color);
+  
+      color: white;
+  
+      margin-top: 2rem;
+  
+    }
+  
+  </style></head><body>  <header><h1>Badou Christ Yohann</h1>
+
+<p>Passionné du numérique et futur entrepreneur engagé pour son pays</p>
+
+  </header>  <main><!-- Objectifs -->
+
+<section>
+
+  <h2>Mes Objectifs</h2>
+
+  <div class="objectifs">
+
+    <div class="card">
+
+      <h3>Entrepreneur Visionnaire</h3>
+
+      <p>Devenir le plus grand entrepreneur de ma génération, créer des solutions numériques innovantes et aider le développement de mon pays.</p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Impact Social</h3>
+
+      <p>Contribuer activement à l'économie locale et soutenir les jeunes talents dans le numérique.</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- Passions -->
+
+<section>
+
+  <h2>Ma Passion</h2>
+
+  <div class="passions">
+
+    <div class="card">
+
+      <h3>Numérique & Technologie</h3>
+
+      <p>Explorer les nouvelles technologies, coder, créer des applications et transformer des idées en solutions concrètes.</p>
+
+    </div>
+
+    <div class="card">
+
+      <h3>Innovation</h3>
+
+      <p>Rechercher toujours l'innovation pour améliorer la vie des utilisateurs et révolutionner le marché.</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- Certifications -->
+
+<section>
+
+  <h2>Mes Certifications</h2>
+
+  <div class="certifications">
+
+    <div class="card" onclick="alert('Certification GOOGLE DOCS acquise en 2025 !')">
+
+      <h3>GOOGLE DOCS</h3>
+
+      <p>Maîtrise du l’édition de documents collaboratifs en ligne, la mise en forme professionnelle et le travail en temps réel dans un environnement cloud.</p>
+
+    </div>
+
+    <div class="card" onclick="alert('Certification GOOGLE DRIVE obtenue !')">
+
+      <h3>GOOGLE DRIVE</h3>
+
+      <p>Compétences en maîtrise de gestion, de stockage, de partage sécurisé et la synchronisation de fichiers dans un environnement cloud.</p>
+
+    </div>
+
+    <div class="card" onclick="alert('Certification GOOGLE SSHEETS avancé obtenue !')">
+
+      <h3>GOOGLE SHHEETS</h3>
+
+      <p>Maîtrise en l’analyse de données, les calculs automatisés, les tableaux dynamiques et la collaboration en temps réel dans un tableur cloud.</p>
+
+    </div>
+
+    <div class="card" onclick="alert('Certification GOOGLE SLIDES obtenue !')">
+
+      <h3>GOOGLE SLIDES</h3>
+
+      <p>Maîtrise en conception de présentations professionnelles, collaboratives et interactives dans un environnement cloud.</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+  </main>  <footer>&copy; 2026 Badou Christ Yohann - Tous droits réservés
+
+  </footer></body></html>
