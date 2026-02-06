@@ -1,186 +1,71 @@
  <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Badou Christ Yohann</title>
-  <style>
-    :root {
-      --primary-color: #1E90FF;
-      --secondary-color: #FF6347;
-      --accent-color: #32CD32;
-      --bg-color: #F5F5F5;
-      --card-bg: #FFFFFF;
-      --text-color: #333333;
-      --header-height: 180px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: var(--primary-color);
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: -3rem auto 2rem auto;
-      padding: 0 1rem;
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
-
-    h2 {
-      color: var(--secondary-color);
-      border-bottom: 3px solid var(--secondary-color);
-      display: inline-block;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .objectifs, .passions, .certifications {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .card {
-      background-color: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      padding: 1.5rem;
-      flex: 1 1 250px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-top 0.3s ease;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-      border-top: 3px solid var(--accent-color);
-    }
-
-    .card h3 {
-      margin-bottom: 0.5rem;
-      color: var(--primary-color);
-    }
-
-    .card p {
-      font-size: 0.95rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background-color: var(--primary-color);
-      color: #fff;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .objectifs, .passions, .certifications {
-        flex-direction: column;
-      }
-
-      main {
-        margin-top: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Badou Christ Yohann</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Badou Christ Yohann</h1>
-    <p>Passionné du numérique et futur entrepreneur engagé pour son pays</p>
-  </header>
 
-  <main>
-    <!-- Objectifs -->
-    <section>
-      <h2>Mes Objectifs</h2>
-      <div class="objectifs">
-        <div class="card">
-          <h3>Entrepreneur Visionnaire</h3>
-          <p>Devenir le plus grand entrepreneur de ma génération, créer des solutions numériques innovantes et aider le développement de mon pays.</p>
-        </div>
-        <div class="card">
-          <h3>Impact Social</h3>
-          <p>Contribuer activement à l'économie locale et soutenir les jeunes talents dans le numérique.</p>
-        </div>
-      </div>
-    </section>
+    <header>
+        <h1>Badou Christ Yohann</h1>
+        <p>Architecte du numérique & Entrepreneur engagé pour l'émergence africaine</p>
+    </header>
 
-    <!-- Passions -->
-    <section>
-      <h2>Ma Passion</h2>
-      <div class="passions">
-        <div class="card">
-          <h3>Numérique & Technologie</h3>
-          <p>Explorer les nouvelles technologies, coder, créer des applications et transformer des idées en solutions concrètes.</p>
-        </div>
-        <div class="card">
-          <h3>Innovation</h3>
-          <p>Rechercher toujours l'innovation pour améliorer la vie des utilisateurs et révolutionner le marché.</p>
-        </div>
-      </div>
-    </section>
+    <div class="profile-container">
+        <img src="photo.jpeg" alt="Badou Christ Yohann" class="profile-img">
+    </div>
 
-    <!-- Certifications -->
-    <section>
-      <h2>Mes Certifications</h2>
-      <div class="certifications">
-        <div class="card" onclick="alert('Certification GOOGLE DOCS acquise en 2025 !')">
-          <h3>GOOGLE DOCS</h3>
-          <p>Maîtrise de l’édition collaborative, mise en forme professionnelle et travail en temps réel dans le cloud.</p>
-        </div>
-        <div class="card" onclick="alert('Certification GOOGLE DRIVE obtenue !')">
-          <h3>GOOGLE DRIVE</h3>
-          <p>Compétences en gestion, stockage, partage sécurisé et synchronisation de fichiers dans le cloud.</p>
-        </div>
-        <div class="card" onclick="alert('Certification GOOGLE SHEETS avancé obtenue !')">
-          <h3>GOOGLE SHEETS</h3>
-          <p>Analyse de données, calculs automatisés, tableaux dynamiques et collaboration en temps réel dans un tableur cloud.</p>
-        </div>
-        <div class="card" onclick="alert('Certification GOOGLE SLIDES obtenue !')">
-          <h3>GOOGLE SLIDES</h3>
-          <p>Conception de présentations professionnelles, collaboratives et interactives dans un environnement cloud.</p>
-        </div>
-      </div>
-    </section>
-  </main>
+    <main>
+        <section id="objectifs">
+            <h2>Mes Objectifs Stratégiques</h2>
+            <div class="objective-box">
+                <div class="card">
+                    <h3>Souveraineté Numérique</h3>
+                    <p>Concevoir des solutions logicielles adaptées aux réalités locales pour une indépendance technologique totale.</p>
+                </div>
+                <div class="card">
+                    <h3>Leadership Entrepreneurial</h3>
+                    <p>Bâtir une entreprise qui propulsera les jeunes talents africains sur la scène mondiale.</p>
+                </div>
+                <div class="card">
+                    <h3>Innovation Inclusive</h3>
+                    <p>Utiliser l'IA et le Cloud pour simplifier l'accès à l'éducation et à la santé.</p>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    &copy; 2026 Badou Christ Yohann - Tous droits réservés
-  </footer>
+        <section id="passions">
+            <h2>Ma Passion : Créer de rien</h2>
+            <div class="passion-content">
+                <div class="passion-text">
+                    <p>Pour moi, coder n'est pas qu'un travail, c'est un art. Ma passion réside dans la transformation d'une simple idée abstraite en outils fonctionnels qui changent la vie des gens.</p>
+                    <blockquote>"Le code est le langage avec lequel je construis l'avenir."</blockquote>
+                    <p>Je suis fasciné par la vitesse à laquelle la technologie évolue et je consacre chaque jour à maîtriser de nouveaux outils pour rester à la pointe de l'innovation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifs">
+            <h2>Expertise Certifiée</h2>
+            <p style="margin-bottom: 20px;">Maîtrise de l'écosystème Google Cloud (Promo 2025) :</p>
+            <div class="cert-grid">
+                <a href="https://coursera.org/verify/BV1X90OUWTCO" target="_blank" class="cert-card">Google Docs</a>
+                <a href="https://coursera.org/verify/UDAZW0N4NI11" target="_blank" class="cert-card">Google Drive</a>
+                <a href="https://coursera.org/verify/LPJ3V0AB385D" target="_blank" class="cert-card">Google Sheets</a>
+                <a href="https://coursera.org/verify/7TCN77J120ΡΗ" target="_blank" class="cert-card">Google Slides</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Prêt pour la prochaine révolution numérique.</p>
+        <p>&copy; 2026 Badou Christ Yohann - Tous droits réservés</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
 
+   
