@@ -1,71 +1,124 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Badou Christ Yohann</title>
+    <title>Serge Anicet Kouame | L'Art du Regard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,900;1,400&family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="cursor"></div>
+    <div id="cursor-follower"></div>
 
-    <header>
-        <h1>Badou Christ Yohann</h1>
-        <p>Architecte du numérique & Entrepreneur engagé pour l'émergence africaine</p>
-    </header>
+    <div id="loader">L'ART DU REGARD</div>
 
-    <div class="profile-container">
-        <img src="photo.jpeg" alt="Badou Christ Yohann" class="profile-img">
-    </div>
+    <section class="hero">
+        <div class="floating-img-space" style="top: 10%; left: 5%;" data-speed="1.2">
+            <img src="_MG_0045.jpg" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="floating-img-space" style="bottom: 10%; right: 5%;" data-speed="1.5">
+            <img src="P1563672-Modifier.jpg" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="floating-img-space" style="top: 15%; right: 15%; width: 180px; height: 250px;" data-speed="2">
+            <img src="IMG_0977.jpeg" style="width:100%; height:100%; object-fit:cover;">
+        </div>
 
-    <main>
-        <section id="objectifs">
-            <h2>Mes Objectifs Stratégiques</h2>
-            <div class="objective-box">
-                <div class="card">
-                    <h3>Souveraineté Numérique</h3>
-                    <p>Concevoir des solutions logicielles adaptées aux réalités locales pour une indépendance technologique totale.</p>
+        <div class="hero-title">
+            <span class="reveal-text">L'instantané devient</span>
+            <div class="reveal-text">ÉTERNEL</div>
+        </div>
+    </section>
+
+    <section class="narrative">
+        <div class="narrative-content">
+            <h2 class="anim-fade">Plus qu'un photographe, un témoin de l'histoire.</h2>
+            <p class="anim-fade">
+                Avec plus de 5 ans d'expérience sur les terrains les plus exigeants de Côte d'Ivoire — de la ferveur de la <strong>CAN 2024</strong> à l'élégance des mariages de luxe — j'ai appris que la technique ne suffit pas.
+            </p>
+            <p class="anim-fade">
+                Mon rôle est d'anticiper l'émotion. En tant que <strong>Directeur de la Photographie</strong> chez Shoot By Tik Tak Agency, je ne livre pas seulement des fichiers, je bâtis des héritages visuels.
+            </p>
+            <div class="anim-fade" style="margin-top: 40px; font-weight: 700; color: var(--accent-ocre); letter-spacing: 4px; font-size: 0.9rem;">
+                PROFIL ACCRÉDITÉ CAF & EXPERT POST-PRODUCTION
+            </div>
+        </div>
+        <div class="image-reveal-box anim-reveal">
+            <div class="img-slot">
+                <img src="profil.jpg" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+        </div>
+    </section>
+
+    <section class="horizontal-gallery-wrapper">
+        <div class="horizontal-gallery">
+            <div class="gallery-strip">
+                <div class="gallery-panel">
+                    <div class="img-slot">
+                        <img src="IMG_1901.PNG" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="panel-desc"><h3>ADRÉNALINE</h3><p>Couverture officielle CAN 2024</p></div>
                 </div>
-                <div class="card">
-                    <h3>Leadership Entrepreneurial</h3>
-                    <p>Bâtir une entreprise qui propulsera les jeunes talents africains sur la scène mondiale.</p>
+                <div class="gallery-panel">
+                    <div class="img-slot">
+                        <img src="IMG_1908.PNG" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="panel-desc"><h3>VIBRATION</h3><p>FEMUA, PRIMUD & Scènes Evénementielle</p></div>
                 </div>
-                <div class="card">
-                    <h3>Innovation Inclusive</h3>
-                    <p>Utiliser l'IA et le Cloud pour simplifier l'accès à l'éducation et à la santé.</p>
+                <div class="gallery-panel">
+                    <div class="img-slot">
+                        <img src="001 (20).jpg" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="panel-desc"><h3>ÉTERNITÉ</h3><p>Mariages Traditionnels & Modernes</p></div>
+                </div>
+                <div class="gallery-panel">
+                    <div class="img-slot">
+                        <img src="IMG_1905.PNG" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="panel-desc"><h3>PRESTIGE</h3><p>Studio & Branding Entreprise</p></div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="passions">
-            <h2>Ma Passion : Créer de rien</h2>
-            <div class="passion-content">
-                <div class="passion-text">
-                    <p>Pour moi, coder n'est pas qu'un travail, c'est un art. Ma passion réside dans la transformation d'une simple idée abstraite en outils fonctionnels qui changent la vie des gens.</p>
-                    <blockquote>"Le code est le langage avec lequel je construis l'avenir."</blockquote>
-                    <p>Je suis fasciné par la vitesse à laquelle la technologie évolue et je consacre chaque jour à maîtriser de nouveaux outils pour rester à la pointe de l'innovation.</p>
-                </div>
+    <section class="expertise">
+        <h2 style="font-family: 'Playfair Display'; font-size: 5rem; text-align: left; line-height: 0.8; margin-bottom: 50px;" class="anim-fade">EXPERTISE<br><span style="font-size: 2rem; color: var(--accent-ocre)">ET VISION</span></h2>
+        <div class="grid-expertise">
+            <div class="exp-card">
+                <h3>Vitesse & Précision</h3>
+                <p>Livraison des images retouchées sous 48 heures. Parce que l'actualité n'attend pas.</p>
             </div>
-        </section>
-
-        <section id="certifs">
-            <h2>Expertise Certifiée</h2>
-            <p style="margin-bottom: 20px;">Maîtrise de l'écosystème Google Cloud (Promo 2025) :</p>
-            <div class="cert-grid">
-                <a href="https://coursera.org/verify/BV1X90OUWTCO" target="_blank" class="cert-card">Google Docs</a>
-                <a href="https://coursera.org/verify/UDAZW0N4NI11" target="_blank" class="cert-card">Google Drive</a>
-                <a href="https://coursera.org/verify/LPJ3V0AB385D" target="_blank" class="cert-card">Google Sheets</a>
-                <a href="https://coursera.org/verify/7TCN77J120ΡΗ" target="_blank" class="cert-card">Google Slides</a>
+            <div class="exp-card">
+                <h3>Matériel de Pointe</h3>
+                <p>Utilisation des boîtiers dernière génération pour une clarté absolue, même en basse lumière.</p>
             </div>
-        </section>
-    </main>
+            <div class="exp-card">
+                <h3>Direction Artistique</h3>
+                <p>Je gère vos projets de A à Z : du concept initial à la retouche finale sous Photoshop & Lightroom.</p>
+            </div>
+            <div class="exp-card">
+                <h3>Réseau & Partenariat</h3>
+                <p>Partenaire de confiance pour des marques globales comme 1xbet et des institutions comme la CAF.</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>Prêt pour la prochaine révolution numérique.</p>
-        <p>&copy; 2026 Badou Christ Yohann - Tous droits réservés</p>
+        <div class="footer-logo">S.A. KOUAME</div>
+        <div class="footer-content">
+            <p style="letter-spacing: 5px; margin-bottom: 10px; opacity: 0.5;">ABIDJAN, CÔTE D'IVOIRE</p>
+            <p style="font-size: 1.5rem; font-weight: 200;">+225 07 79 34 80 64</p>
+            <p style="margin-bottom: 30px; color: var(--accent-ocre)">SERGEANICET08@GMAIL.COM</p>
+
+            <div class="footer-signature">Serge Anicet Kouamé</div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+  
 
    
