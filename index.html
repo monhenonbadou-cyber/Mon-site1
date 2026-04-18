@@ -1,124 +1,782 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serge Anicet Kouame | L'Art du Regard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,900;1,400&family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Le Baobab Doré • Restaurant Africain</title>
+  <!-- Google Fonts élégantes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome pour icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- AOS (Animate On Scroll) pour animations au défilement -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(145deg, #fdf8f0 0%, #f5ede1 100%);
+      color: #3e2c1b;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Animations globales */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Header & Navigation */
+    header {
+      background: rgba(255, 248, 235, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 8px 30px rgba(180, 100, 30, 0.08);
+      border-bottom: 2px solid #e7b42c;
+      animation: slideInLeft 0.8s ease-out;
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    /* LOGO avec animation */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, #c28b3e 0%, #a0652a 100%);
+      width: 55px;
+      height: 55px;
+      border-radius: 50% 20% 50% 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(160, 100, 40, 0.2);
+      border: 2px solid #f3cd81;
+      transition: transform 0.3s;
+    }
+
+    .logo-icon:hover {
+      transform: rotate(5deg) scale(1.1);
+    }
+
+    .logo-icon i {
+      font-size: 2.2rem;
+      color: #fbeec9;
+    }
+
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #5e3a1c;
+      letter-spacing: 1px;
+    }
+
+    .logo-text span {
+      color: #b5711e;
+      font-weight: 600;
+    }
+
+    /* Navigation */
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #4d3114;
+      font-size: 1.15rem;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #d4922a;
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+      width: 100%;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #9e601d;
+    }
+
+    /* Contenu principal */
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    /* Gestion des pages */
+    .page {
+      display: none;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    /* ----- PAGE ACCUEIL ----- */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1 1 350px;
+      animation: slideInLeft 1s ease-out;
+    }
+
+    .hero-content h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #4a2c12;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-content h1 i {
+      color: #c1802a;
+      font-size: 2.8rem;
+      margin-right: 8px;
+      animation: pulse 3s infinite;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #5a3f24;
+      margin-bottom: 2rem;
+    }
+
+    .hero-image {
+      flex: 1 1 350px;
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      overflow: hidden;
+      box-shadow: 20px 20px 40px rgba(160, 100, 20, 0.15);
+      border: 5px solid #eec77e;
+      animation: slideInRight 1s ease-out;
+      transition: all 0.5s ease;
+    }
+
+    .hero-image:hover {
+      transform: scale(1.02);
+      box-shadow: 25px 25px 50px rgba(160, 100, 20, 0.25);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+    }
+
+    .hero-image:hover img {
+      transform: scale(1.1);
+    }
+
+    .arguments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+
+    .arg-card {
+      background: #fffbf4;
+      padding: 2.2rem 1.8rem;
+      border-radius: 40px 10px 40px 10px;
+      box-shadow: 0 15px 30px rgba(190, 130, 40, 0.1);
+      text-align: center;
+      border: 1px solid #ebc47f;
+      transition: all 0.4s ease;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .arg-card:nth-child(1) { animation-delay: 0.1s; }
+    .arg-card:nth-child(2) { animation-delay: 0.3s; }
+    .arg-card:nth-child(3) { animation-delay: 0.5s; }
+
+    .arg-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 25px 40px rgba(190, 130, 40, 0.2);
+      border-color: #d4922a;
+    }
+
+    .arg-card i {
+      font-size: 3rem;
+      color: #bc7726;
+      margin-bottom: 1.2rem;
+      transition: transform 0.3s;
+    }
+
+    .arg-card:hover i {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    .arg-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+      color: #593d1e;
+    }
+
+    .specialty {
+      background: linear-gradient(135deg, #e7d8c0 0%, #d4c4a8 100%);
+      padding: 3rem 2rem;
+      border-radius: 70px 20px 70px 20px;
+      margin-top: 3rem;
+      text-align: center;
+      animation: fadeInUp 1s ease-out;
+      transition: transform 0.3s;
+    }
+
+    .specialty:hover {
+      transform: scale(1.01);
+    }
+
+    .specialty h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #2f200e;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #bc7726;
+      color: #fef5e6;
+      padding: 0.9rem 2.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn:hover {
+      background: #9e601d;
+      box-shadow: 0 8px 18px rgba(180, 100, 20, 0.3);
+      transform: translateY(-3px);
+    }
+
+    /* ----- PAGE MENU (Mets & Lieu) ----- */
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      text-align: center;
+      margin: 2rem 0 2rem;
+      color: #4b2d12;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    h2 i {
+      color: #bc7726;
+      margin: 0 10px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #fffbf2;
+      border-radius: 40px 15px 40px 15px;
+      overflow: hidden;
+      box-shadow: 0 20px 30px rgba(150, 90, 20, 0.08);
+      border: 1px solid #eac481;
+      transition: all 0.4s ease;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      animation-delay: calc(var(--i, 0) * 0.1s);
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 45px rgba(160, 100, 20, 0.2);
+      border-color: #d4922a;
+    }
+
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-bottom: 3px solid #cb8e3a;
+      transition: transform 0.5s;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+
+    .card-content {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .card-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      color: #563a1a;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-content p {
+      color: #6b4622;
+    }
+
+    .card-content p i {
+      color: #b5711e;
+      margin-right: 6px;
+    }
+
+    .place-section {
+      margin-top: 4rem;
+    }
+
+    /* ----- PAGE ABONNEMENT ----- */
+    .form-card {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fffbf2;
+      padding: 2.8rem 2.5rem;
+      border-radius: 60px 20px 60px 20px;
+      box-shadow: 0 20px 40px rgba(140, 80, 10, 0.12);
+      border: 1px solid #e6bd7a;
+      animation: fadeInUp 1s ease-out;
+      transition: all 0.3s ease;
+    }
+
+    .form-card:hover {
+      box-shadow: 0 30px 50px rgba(140, 80, 10, 0.18);
+    }
+
+    .input-group {
+      margin-bottom: 1.8rem;
+      opacity: 0;
+      animation: slideInLeft 0.6s ease-out forwards;
+    }
+
+    .input-group:nth-child(1) { animation-delay: 0.1s; }
+    .input-group:nth-child(2) { animation-delay: 0.2s; }
+    .input-group:nth-child(3) { animation-delay: 0.3s; }
+    .input-group:nth-child(4) { animation-delay: 0.4s; }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #6b4622;
+    }
+
+    label i {
+      color: #bc7726;
+      margin-right: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 1rem 1.2rem;
+      border: 2px solid #edd5b0;
+      border-radius: 50px;
+      font-size: 1rem;
+      background: #fffefb;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    input:focus {
+      border-color: #b5711e;
+      box-shadow: 0 0 0 4px rgba(181, 113, 30, 0.1);
+      transform: translateX(5px);
+    }
+
+    .btn-block {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.2rem;
+      animation: pulse 2s infinite;
+    }
+
+    .offer {
+      margin-top: 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, #f3e5d2 0%, #e8d5bc 100%);
+      padding: 1.2rem;
+      border-radius: 30px;
+      animation: fadeInUp 0.8s ease-out 0.5s both;
+    }
+
+    .offer i {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #dccbb4;
+      color: #3f2c17;
+      margin-top: 2rem;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #bc7726, #e7b42c, #bc7726, transparent);
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      nav ul {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+    }
+
+    /* Loader d'image */
+    .card {
+      position: relative;
+    }
+    
+    .card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(transparent 60%, rgba(0,0,0,0.03));
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
-    <div id="cursor"></div>
-    <div id="cursor-follower"></div>
 
-    <div id="loader">L'ART DU REGARD</div>
+<header>
+  <div class="nav-container">
+    <div class="logo">
+      <div class="logo-icon">
+        <i class="fas fa-utensils"></i>
+      </div>
+      <div class="logo-text">
+        Le Baobab <span>Doré</span>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a class="nav-link active" data-page="accueil">Accueil</a></li>
+        <li><a class="nav-link" data-page="menu">Nos Mets & Lieu</a></li>
+        <li><a class="nav-link" data-page="abonnement">S'abonner</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
+<!-- PAGE 1 : ACCUEIL -->
+<div id="accueil" class="page active">
+  <main class="container">
     <section class="hero">
-        <div class="floating-img-space" style="top: 10%; left: 5%;" data-speed="1.2">
-            <img src="_MG_0045.jpg" style="width:100%; height:100%; object-fit:cover;">
-        </div>
-        <div class="floating-img-space" style="bottom: 10%; right: 5%;" data-speed="1.5">
-            <img src="P1563672-Modifier.jpg" style="width:100%; height:100%; object-fit:cover;">
-        </div>
-        <div class="floating-img-space" style="top: 15%; right: 15%; width: 180px; height: 250px;" data-speed="2">
-            <img src="IMG_0977.jpeg" style="width:100%; height:100%; object-fit:cover;">
-        </div>
-
-        <div class="hero-title">
-            <span class="reveal-text">L'instantané devient</span>
-            <div class="reveal-text">ÉTERNEL</div>
-        </div>
+      <div class="hero-content">
+        <h1><i class="fas fa-leaf"></i> L'Art Culinaire<br>Ivoirien Revisité</h1>
+        <p>Bienvenue au <strong>Baobab Doré</strong>, le restaurant qui sublime les saveurs authentiques de l'Afrique de l'Ouest dans un cadre chaleureux et contemporain.</p>
+        <p><i class="fas fa-check-circle" style="color: #c1802a;"></i> Spécialités : Foutou banane, Sauce graine, Garba, Attiéké poisson...</p>
+      </div>
+      <div class="hero-image">
+        <img src="photo15.jpeg" alt="Ambiance restaurant africain élégant">
+      </div>
     </section>
 
-    <section class="narrative">
-        <div class="narrative-content">
-            <h2 class="anim-fade">Plus qu'un photographe, un témoin de l'histoire.</h2>
-            <p class="anim-fade">
-                Avec plus de 5 ans d'expérience sur les terrains les plus exigeants de Côte d'Ivoire — de la ferveur de la <strong>CAN 2024</strong> à l'élégance des mariages de luxe — j'ai appris que la technique ne suffit pas.
-            </p>
-            <p class="anim-fade">
-                Mon rôle est d'anticiper l'émotion. En tant que <strong>Directeur de la Photographie</strong> chez Shoot By Tik Tak Agency, je ne livre pas seulement des fichiers, je bâtis des héritages visuels.
-            </p>
-            <div class="anim-fade" style="margin-top: 40px; font-weight: 700; color: var(--accent-ocre); letter-spacing: 4px; font-size: 0.9rem;">
-                PROFIL ACCRÉDITÉ CAF & EXPERT POST-PRODUCTION
-            </div>
-        </div>
-        <div class="image-reveal-box anim-reveal">
-            <div class="img-slot">
-                <img src="profil.jpg" style="width:100%; height:100%; object-fit:cover;">
-            </div>
-        </div>
-    </section>
+    <div class="arguments-grid">
+      <div class="arg-card">
+        <i class="fas fa-seedling"></i>
+        <h3>Frais & Local</h3>
+        <p>Nous sélectionnons chaque jour des produits du terroir auprès de producteurs locaux. Bananes plantain, ignames, poissons du jour.</p>
+      </div>
+      <div class="arg-card">
+        <i class="fas fa-fire"></i>
+        <h3>Tradition Rehaussée</h3>
+        <p>Nos recettes sont héritées des grands-mères, avec une touche gastronomique moderne qui respecte l'âme du plat.</p>
+      </div>
+      <div class="arg-card">
+        <i class="fas fa-wine-glass-alt"></i>
+        <h3>Cadre Élégant</h3>
+        <p>Un décor inspiré des cases africaines et du design contemporain : parfait pour vos déjeuners d'affaires ou dîners romantiques.</p>
+      </div>
+    </div>
 
-    <section class="horizontal-gallery-wrapper">
-        <div class="horizontal-gallery">
-            <div class="gallery-strip">
-                <div class="gallery-panel">
-                    <div class="img-slot">
-                        <img src="IMG_1901.PNG" style="width:100%; height:100%; object-fit:cover;">
-                    </div>
-                    <div class="panel-desc"><h3>ADRÉNALINE</h3><p>Couverture officielle CAN 2024</p></div>
-                </div>
-                <div class="gallery-panel">
-                    <div class="img-slot">
-                        <img src="IMG_1908.PNG" style="width:100%; height:100%; object-fit:cover;">
-                    </div>
-                    <div class="panel-desc"><h3>VIBRATION</h3><p>FEMUA, PRIMUD & Scènes Evénementielle</p></div>
-                </div>
-                <div class="gallery-panel">
-                    <div class="img-slot">
-                        <img src="001 (20).jpg" style="width:100%; height:100%; object-fit:cover;">
-                    </div>
-                    <div class="panel-desc"><h3>ÉTERNITÉ</h3><p>Mariages Traditionnels & Modernes</p></div>
-                </div>
-                <div class="gallery-panel">
-                    <div class="img-slot">
-                        <img src="IMG_1905.PNG" style="width:100%; height:100%; object-fit:cover;">
-                    </div>
-                    <div class="panel-desc"><h3>PRESTIGE</h3><p>Studio & Branding Entreprise</p></div>
-                </div>
-            </div>
+    <div class="specialty">
+      <h2>✨ Pourquoi Le Baobab Doré est votre destination gourmande ?</h2>
+      <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">Parce que nous sommes spécialisés dans la vente de mets ivoiriens d'exception : Foutou igname, Garba (attiéké thon), Tchêtché, et bien plus. Un service attentionné, une ambiance apaisante, et des saveurs qui vous transportent.</p>
+      <button class="btn go-to-menu">Découvrir les mets <i class="fas fa-arrow-right"></i></button>
+    </div>
+  </main>
+</div>
+
+<!-- PAGE 2 : MENU (Mets & Lieu) - GALERIE AGRANDIE -->
+<div id="menu" class="page">
+  <main class="container">
+    <h2><i class="fas fa-utensil-spoon"></i> Nos spécialités savoureuses <i class="fas fa-utensil-spoon"></i></h2>
+    <div class="gallery">
+      <!-- 12 photos de mets -->
+      <div class="card" style="--i:1"><img src="photo1.jpeg" alt="Foutou banane"><div class="card-content"><h3>Foutou Banane</h3><p><i class="fas fa-pepper-hot"></i> Sauce graine</p></div></div>
+      <div class="card" style="--i:2"><img src="photo2.jpeg" alt="Garba"><div class="card-content"><h3>Garba</h3><p><i class="fas fa-fish"></i> Attiéké thon</p></div></div>
+      <div class="card" style="--i:3"><img src="photo3.jpeg" alt="Poulet braisé"><div class="card-content"><h3>Poulet Braisé</h3><p><i class="fas fa-drumstick-bite"></i> Alloco</p></div></div>
+      <div class="card" style="--i:4"><img src="photo4.jpeg" alt="Poisson braisé"><div class="card-content"><h3>Poisson Braisé</h3><p><i class="fas fa-leaf"></i> Bananes plantain</p></div></div>
+      <div class="card" style="--i:5"><img src="photo5.jpeg" alt="Attiéké poisson"><div class="card-content"><h3>Attiéké Poisson</h3><p><i class="fas fa-fish"></i> Tilapia frit</p></div></div>
+      <div class="card" style="--i:6"><img src="photo6.jpeg" alt="Alloco"><div class="card-content"><h3>Alloco</h3><p><i class="fas fa-pepper-hot"></i> Pimenté ou nature</p></div></div>
+      <div class="card" style="--i:7"><img src="photo7.jpeg" alt="Kédjénou"><div class="card-content"><h3>Kédjénou</h3><p><i class="fas fa-egg"></i> Poulet ou agneau</p></div></div>
+      <div class="card" style="--i:8"><img src="photo8.jpeg" alt="Sauce arachide"><div class="card-content"><h3>Sauce Arachide</h3><p><i class="fas fa-seedling"></i> Riz ou foutou</p></div></div>
+      <div class="card" style="--i:9"><img src="photo9.jpeg" alt="Riz gras"><div class="card-content"><h3>Riz Gras</h3><p><i class="fas fa-carrot"></i> Viande ou poisson</p></div></div>
+      <div class="card" style="--i:10"><img src="photo10.jpeg" alt="Tchêtché"><div class="card-content"><h3>Tchêtché</h3><p><i class="fas fa-drumstick"></i> Poulet fumé</p></div></div>
+      <div class="card" style="--i:11"><img src="photo11.jpeg" alt="Placali"><div class="card-content"><h3>Placali</h3><p><i class="fas fa-fish"></i> Sauce kopè</p></div></div>
+      <div class="card" style="--i:12"><img src="photo12.jpeg" alt="Jus gingembre"><div class="card-content"><h3>Jus Gingembre</h3><p><i class="fas fa-cocktail"></i> Fait maison</p></div></div>
+    </div>
+
+    <div class="place-section">
+      <h2><i class="fas fa-store"></i> L'espace du restaurant <i class="fas fa-store"></i></h2>
+      <div class="gallery">
+        <!-- 6 photos du lieu -->
+        <div class="card" style="--i:1"><img src="https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Salle principale"><div class="card-content"><h3>Salle Principale</h3><p><i class="fas fa-star"></i> Ambiance tamisée</p></div></div>
+        <div class="card" style="--i:2"><img src="https://images.pexels.com/photos/274192/pexels-photo-274192.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Terrasse"><div class="card-content"><h3>Terrasse Végétale</h3><p><i class="fas fa-tree"></i> Soirées chaleureuses</p></div></div>
+        <div class="card" style="--i:3"><img src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Coin lounge"><div class="card-content"><h3>Coin Lounge</h3><p><i class="fas fa-couch"></i> Apéritifs</p></div></div>
+        <div class="card" style="--i:4"><img src="https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bar"><div class="card-content"><h3>Bar à Jus</h3><p><i class="fas fa-wine-glass"></i> Cocktails</p></div></div>
+        <div class="card" style="--i:5"><img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Espace privé"><div class="card-content"><h3>Salon Privé</h3><p><i class="fas fa-door-closed"></i> Événements</p></div></div>
+        <div class="card" style="--i:6"><img src="https://images.pexels.com/photos/1449773/pexels-photo-1449773.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cuisine ouverte"><div class="card-content"><h3>Cuisine Ouverte</h3><p><i class="fas fa-fire"></i> Spectacle culinaire</p></div></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- PAGE 3 : ABONNEMENT -->
+<div id="abonnement" class="page">
+  <main class="container">
+    <div class="form-card">
+      <h2><i class="fas fa-envelope-open-text"></i> Rejoignez-nous</h2>
+      <p style="text-align: center; margin-bottom: 2rem;">Inscrivez-vous pour suivre nos offres, nouvelles commandes et événements.</p>
+      <form action="#" method="post">
+        <div class="input-group">
+          <label><i class="fas fa-user"></i> Nom complet</label>
+          <input type="text" placeholder="ex: Koffi Amoin" required>
         </div>
-    </section>
-
-    <section class="expertise">
-        <h2 style="font-family: 'Playfair Display'; font-size: 5rem; text-align: left; line-height: 0.8; margin-bottom: 50px;" class="anim-fade">EXPERTISE<br><span style="font-size: 2rem; color: var(--accent-ocre)">ET VISION</span></h2>
-        <div class="grid-expertise">
-            <div class="exp-card">
-                <h3>Vitesse & Précision</h3>
-                <p>Livraison des images retouchées sous 48 heures. Parce que l'actualité n'attend pas.</p>
-            </div>
-            <div class="exp-card">
-                <h3>Matériel de Pointe</h3>
-                <p>Utilisation des boîtiers dernière génération pour une clarté absolue, même en basse lumière.</p>
-            </div>
-            <div class="exp-card">
-                <h3>Direction Artistique</h3>
-                <p>Je gère vos projets de A à Z : du concept initial à la retouche finale sous Photoshop & Lightroom.</p>
-            </div>
-            <div class="exp-card">
-                <h3>Réseau & Partenariat</h3>
-                <p>Partenaire de confiance pour des marques globales comme 1xbet et des institutions comme la CAF.</p>
-            </div>
+        <div class="input-group">
+          <label><i class="fas fa-envelope"></i> Email</label>
+          <input type="email" placeholder="vous@email.com" required>
         </div>
-    </section>
-
-    <footer>
-        <div class="footer-logo">S.A. KOUAME</div>
-        <div class="footer-content">
-            <p style="letter-spacing: 5px; margin-bottom: 10px; opacity: 0.5;">ABIDJAN, CÔTE D'IVOIRE</p>
-            <p style="font-size: 1.5rem; font-weight: 200;">+225 07 79 34 80 64</p>
-            <p style="margin-bottom: 30px; color: var(--accent-ocre)">SERGEANICET08@GMAIL.COM</p>
-
-            <div class="footer-signature">Serge Anicet Kouamé</div>
+        <div class="input-group">
+          <label><i class="fas fa-phone-alt"></i> Téléphone</label>
+          <input type="tel" placeholder="+225 ..." required>
         </div>
-    </footer>
+        <div class="input-group">
+          <label><i class="fas fa-map-marker-alt"></i> Quartier / Ville</label>
+          <input type="text" placeholder="Cocody, Abidjan">
+        </div>
+        <button type="submit" class="btn btn-block">S'abonner & Suivre les commandes <i class="fas fa-arrow-right"></i></button>
+      </form>
+      <div class="offer">
+        <i class="fas fa-gift" style="color: #b5711e; font-size: 1.5rem;"></i> 
+        <strong>-10%</strong> sur votre première commande après abonnement !
+      </div>
+    </div>
+  </main>
+</div>
 
-    <script src="script.js"></script>
+<footer>
+  <p>© 2025 Le Baobab Doré • Abidjan • Livraison & Click & Collect</p>
+  <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+    <i class="fas fa-phone"></i> +225 07 00 00 00 00 • 
+    <i class="fas fa-envelope"></i> contact@baobabdore.ci
+  </p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  (function() {
+    // Initialisation AOS (animations au scroll supplémentaires)
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true
+    });
+
+    // Système de navigation entre les 3 pages
+    const pages = {
+      accueil: document.getElementById('accueil'),
+      menu: document.getElementById('menu'),
+      abonnement: document.getElementById('abonnement')
+    };
+
+    const navLinks = document.querySelectorAll('.nav-link');
+    const goToMenuBtn = document.querySelector('.go-to-menu');
+
+    function switchPage(pageId) {
+      // Cacher toutes les pages
+      Object.values(pages).forEach(page => page.classList.remove('active'));
+      // Afficher la page sélectionnée
+      pages[pageId].classList.add('active');
+      
+      // Mettre à jour la classe active des liens
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.dataset.page === pageId) {
+          link.classList.add('active');
+        }
+      });
+      
+      // Scroll en haut
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // Rafraîchir AOS
+      setTimeout(() => AOS.refresh(), 100);
+    }
+
+    // Écouteurs sur les liens de navigation
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const pageId = link.dataset.page;
+        if (pageId) switchPage(pageId);
+      });
+    });
+
+    // Bouton "Découvrir les mets"
+    if (goToMenuBtn) {
+      goToMenuBtn.addEventListener('click', () => switchPage('menu'));
+    }
+
+    // Gérer l'URL avec hash
+    function handleHashChange() {
+      const hash = window.location.hash.substring(1);
+      if (hash === 'menu') switchPage('menu');
+      else if (hash === 'abonnement') switchPage('abonnement');
+      else switchPage('accueil');
+    }
+    window.addEventListener('hashchange', handleHashChange);
+    if (window.location.hash) handleHashChange();
+  })();
+</script>
+
 </body>
-</html>
-  
-
-   
+</html> 
